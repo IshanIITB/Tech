@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IITB Tech Community Dashboard</title>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+
+  <script>
+    tailwind.config = {
+      plugins: [daisyui],
+      daisyui: {
+        themes: ["light", "dark", "retro", "cyberpunk", "valentine", "aqua"],
+      },
+    }
+  </script>
+</head>
+<body class="transition-colors duration-300 bg-base-100 overflow-hidden">
+
+  <div class="drawer lg:drawer-open h-[100dvh]">
+    <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+    
+    <div class="drawer-content flex flex-col h-[100dvh] overflow-y-auto overflow-x-hidden scroll-smooth">
+      
+      <div class="w-full flex justify-between items-center p-3 sm:p-4 bg-base-200 lg:bg-transparent lg:hidden sticky top-0 z-50 backdrop-blur-sm bg-opacity-90 border-b border-base-300 lg:border-none shadow-sm">
+        <div class="flex-none">
+          <label for="my-drawer" class="btn btn-square btn-ghost drawer-button">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          </label>
+        </div>
+        <div class="flex-1 px-2 mx-2 text-lg sm:text-xl font-bold text-center">IITB Tech Community</div>
+        <div class="flex-none w-12"></div> 
+      </div>
+
+      <main class="flex-grow p-4 sm:p-6 md:p-8 lg:p-10 max-w-7xl mx-auto w-full">
+        
+        <section id="dashboard" class="mb-12 md:mb-16 scroll-mt-24">
+          <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 md:mb-8 text-base-content break-words">Dashboard</h1>
+          
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
+            
+            <div class="card bg-base-100 shadow-xl border border-base-200">
+              <div class="card-body p-6">
+                <h2 class="card-title text-xl text-primary break-words">⚙️ Core Headquarters</h2>
+                <p class="text-base text-base-content/80">Skip the noise and jump straight into the survival kits for CS101, CS409M, and advanced computing.</p>
+                <div class="card-actions justify-end mt-4">
+                  <a href="#cs-resources" class="btn btn-primary w-full sm:w-auto">Go to CS Resources</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="card bg-neutral text-neutral-content shadow-xl">
+              <div class="card-body p-6">
+                <h2 class="card-title text-xl break-words">📬 Got Feedback?</h2>
+                <p class="text-base text-neutral-content/80">Found a broken link? Have better notes? Or just want to yell about pointers? Send a strongly worded email.</p>
+                <div class="card-actions justify-end mt-4">
+                  <button onclick="sendFeedback()" class="btn btn-secondary w-full sm:w-auto">Send Feedback</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="divider my-10 md:my-16 text-lg sm:text-2xl md:text-3xl font-bold text-primary text-center px-2 whitespace-nowrap">
+          The Grand Unified Portal
+        </div>
+        
+        <div class="hero bg-gradient-to-br from-warning to-error text-warning-content rounded-2xl shadow-xl mb-12 md:mb-16 overflow-hidden">
+          <div class="hero-content text-center py-10 md:py-12 px-4 w-full">
+            <div class="max-w-2xl">
+              <h2 class="text-xl sm:text-2xl md:text-3xl font-extrabold mb-4 leading-tight break-words text-balance">🔥 Vision 2026: Mitron, Code Hard!</h2>
+              <p class="text-sm sm:text-base md:text-lg opacity-90">Inaugurating the Sem grind with the discipline of a Prime Minister and the logic of a compiler. No segmentation faults, only development.</p>
+            </div>
+          </div>
+        </div>
+
+        <section id="cs-resources" class="mb-12 md:mb-16 scroll-mt-24">
+          <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-6 flex items-center gap-2 break-words text-balance">
+            💻 CS Resources
+          </h2>
+
+          <div class="card bg-base-200 shadow-sm mb-6 border border-base-300">
+            <div class="card-body p-5 md:p-6">
+              <h3 class="card-title text-lg mb-2 break-words">📚 Recommended Books Library</h3>
+              <p class="text-sm opacity-75 mb-4">Standard texts for surviving the semester without losing your sanity.</p>
+              <div class="flex flex-wrap gap-2">
+                <div class="badge badge-primary badge-outline p-3 text-xs sm:text-sm">Cormen (Algorithms)</div>
+                <div class="badge badge-primary badge-outline p-3 text-xs sm:text-sm">Stroustrup (C++)</div>
+                <div class="badge badge-primary badge-outline p-3 text-xs sm:text-sm">Silberschatz (OS)</div>
+                <div class="badge badge-primary badge-outline p-3 text-xs sm:text-sm">Patterson (Arch)</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card bg-base-100 shadow-xl border-t-4 border-primary mb-6">
+            <div class="card-body p-4 sm:p-6 md:p-8">
+              <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 mb-6">
+                <h2 class="card-title text-lg sm:text-xl md:text-2xl text-primary break-words text-balance">Active Courses</h2>
+                <span class="badge badge-success shrink-0">Live</span>
+              </div>
+              <p class="mb-6 text-sm md:text-base text-base-content/80">Click on a course below to access the materials.</p>
+
+              <div class="join join-vertical w-full bg-base-200 rounded-box">
+                
+                <div class="collapse collapse-arrow join-item border border-base-300">
+                  <input type="radio" name="cs-accordion" checked="checked" /> 
+                  <div class="collapse-title text-sm sm:text-base md:text-lg font-medium pr-10 break-words leading-tight">CS101: Computer Programming and Utilization</div>
+                  <div class="collapse-content bg-base-100 p-4 sm:p-6 border-t border-base-200">
+                    <div class="divider divider-start text-primary font-bold text-sm mt-0">Practice</div>
+                    <ul class="menu w-full p-0"><li><a href="./pdfs/cs101_bank.pdf" target="_blank">📘 50-Question Practice Bank</a></li></ul>
+                    <div class="divider divider-start text-primary font-bold text-sm">Modules</div>
+                    <ul class="menu w-full p-0">
+                      <li><a href="./pdfs/cs101_ch1.pdf" target="_blank">📄 Module 1: Basic C++ & Control Flow</a></li>
+                      <li><a href="./pdfs/cs101_ch2.pdf" target="_blank">📄 Module 2: Recursion</a></li>
+                      <li><a href="./pdfs/cs101_ch3.pdf" target="_blank">📄 Module 3: Arrays & Classes</a></li>
+                    </ul>
+                    <div class="divider divider-start text-primary font-bold text-sm">PYQs</div>
+                    <ul class="menu w-full p-0">
+                      <li><a href="./pdfs/cs101_pyqs_2024.pdf" target="_blank">📝 2024 Midsem & Endsem</a></li>
+                      <li><a href="./pdfs/cs101_pyqs_2023.pdf" target="_blank">📝 2023 Midsem & Endsem</a></li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="collapse collapse-arrow join-item border border-base-300">
+                  <input type="radio" name="cs-accordion" /> 
+                  <div class="collapse-title text-sm sm:text-base md:text-lg font-medium pr-10 break-words leading-tight">CS409M: Advanced Topics in Computer Science</div>
+                  <div class="collapse-content bg-base-100 p-4 sm:p-6 border-t border-base-200">
+                    <div class="divider divider-start text-primary font-bold text-sm mt-0">References</div>
+                    <ul class="menu w-full p-0"><li><a href="./pdfs/cs409_notes.pdf" target="_blank">📘 Advanced Algorithms Notes</a></li></ul>
+                    <div class="divider divider-start text-primary font-bold text-sm">Chapter PDFs</div>
+                    <ul class="menu w-full p-0">
+                      <li><a href="./pdfs/cs409_ch1.pdf" target="_blank">📄 Chapter 1: Graph Theory</a></li>
+                      <li><a href="./pdfs/cs409_ch2.pdf" target="_blank">📄 Chapter 2: Dynamic Programming</a></li>
+                      <li><a href="./pdfs/cs409_ch3.pdf" target="_blank">📄 Chapter 3: NP-Completeness</a></li>
+                    </ul>
+                    <div class="divider divider-start text-primary font-bold text-sm">PYQs</div>
+                    <ul class="menu w-full p-0">
+                      <li><a href="./pdfs/cs409_pyqs_2024.pdf" target="_blank">📝 2024 Midsem & Endsem</a></li>
+                    </ul>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="cminds" class="mb-12 md:mb-16 scroll-mt-24">
+          <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-6 flex items-center gap-3 break-words">
+            🧠 CMINDS <span class="badge badge-secondary badge-lg">+10000 Aura</span>
+          </h2>
+          <div class="card bg-gradient-to-br from-indigo-900 via-purple-900 to-black text-white shadow-2xl border-t-4 border-secondary mb-6">
+            <div class="card-body p-4 sm:p-6 md:p-8">
+              <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 mb-6">
+                <h2 class="card-title text-lg sm:text-xl md:text-2xl text-secondary break-words text-balance">The AI/ML Sigma Grindset</h2>
+                <span class="badge badge-warning shrink-0 animate-pulse">GPUs Melting 🔥</span>
+              </div>
+              <p class="mb-6 text-sm md:text-base opacity-90">Where we pretend to understand the math behind Multi-Layer Perceptrons but actually just `import torch` and pray. <br><br><strong>⚠️ COMMANDMENT:</strong> Strictly no `std::vector`, no `new`, no `delete`. We construct Skynet using raw <code>int arr[1000]</code> because dynamic memory is for the weak. Immediate loss of aura for heap allocation violations.</p>
+
+              <div class="join join-vertical w-full bg-base-100 text-base-content rounded-box shadow-inner">
+                
+                <div class="collapse collapse-arrow join-item border border-base-300">
+                  <input type="radio" name="cminds-accordion" checked="checked" /> 
+                  <div class="collapse-title text-sm sm:text-base md:text-lg font-bold pr-10 break-words leading-tight text-secondary">DS201: Intro to "It's Just Curve Fitting"</div>
+                  <div class="collapse-content bg-base-100 p-4 sm:p-6 border-t border-base-200">
+                    <div class="divider divider-start text-secondary font-bold text-sm mt-0">Survival Kits</div>
+                    <ul class="menu w-full p-0">
+                      <li><a href="./pdfs/ds201_what_is_a_tensor.pdf" target="_blank">📘 What even is a Tensor bro.pdf</a></li>
+                      <li><a href="./pdfs/ds201_linear_algebra_tears.pdf" target="_blank">📘 Linear Algebra Copium</a></li>
+                    </ul>
+                    <div class="divider divider-start text-secondary font-bold text-sm">PYQs</div>
+                    <ul class="menu w-full p-0">
+                      <li><a href="./pdfs/ds201_pyqs.pdf" target="_blank">📝 2024 (The paper that destroyed batch '26)</a></li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="collapse collapse-arrow join-item border border-base-300">
+                  <input type="radio" name="cminds-accordion" /> 
+                  <div class="collapse-title text-sm sm:text-base md:text-lg font-bold pr-10 break-words leading-tight text-secondary">AI301: Gradient Descent into Madness</div>
+                  <div class="collapse-content bg-base-100 p-4 sm:p-6 border-t border-base-200">
+                    <div class="divider divider-start text-secondary font-bold text-sm mt-0">Manifesting Weights</div>
+                    <ul class="menu w-full p-0">
+                      <li><a href="./pdfs/ai301_backprop_prayers.pdf" target="_blank">📄 Backpropagation Prayers & Mantras</a></li>
+                      <li><a href="./pdfs/ai301_cuda_out_of_memory.pdf" target="_blank">📄 Fixing CUDA Out of Memory (You can't)</a></li>
+                    </ul>
+                    <div class="divider divider-start text-secondary font-bold text-sm">Notes</div>
+                    <ul class="menu w-full p-0">
+                      <li><a href="./pdfs/ai301_chatgpt_prompts.pdf" target="_blank">📝 50 Best Prompts to Debug PyTorch</a></li>
+                    </ul>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="tech" class="mb-12 md:mb-16 scroll-mt-24">
+          <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-6 break-words">👨‍💻 Competitive Programming</h2>
+          <div class="card bg-base-100 shadow-xl border border-base-200">
+            <div class="card-body p-5 md:p-8">
+              <h2 class="card-title text-accent break-words">LeetCode, CF & CSES</h2>
+              <p class="text-sm md:text-base text-base-content/80">For when you realize engineering is cool, but cracking O(n log n) logic pays for the Mumbai rent.</p>
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="badge badge-outline">LeetCode</span>
+                <span class="badge badge-outline">Codeforces</span>
+                <span class="badge badge-outline">CSES Problem Set</span>
+              </div>
+              <div class="card-actions justify-end mt-4">
+                <a href="#dashboard" class="btn btn-ghost btn-sm md:btn-md">Back to Top</a>
+                <a href="https://leetcode.com" target="_blank" class="btn btn-accent btn-sm md:btn-md">Grind Now</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="bollywood" class="mb-12 md:mb-16 scroll-mt-24">
+          <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-6 break-words">🎬 Stress Relief</h2>
+          <div class="card bg-neutral text-neutral-content shadow-xl">
+            <div class="card-body p-5 md:p-8">
+              <h2 class="card-title text-info break-words">Sonam Bajwa & Siddharth Malhotra</h2>
+              <p class="text-sm md:text-base text-neutral-content/80">Perfectly balanced weekend therapy. Half Punjabi charm, half intense action.</p>
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="badge badge-ghost bg-base-300 text-base-content border-none">Punjabi Hits</span>
+                <span class="badge badge-ghost bg-base-300 text-base-content border-none">Action Flicks</span>
+                <span class="badge badge-ghost bg-base-300 text-base-content border-none">Vibes</span>
+              </div>
+              <div class="card-actions justify-end mt-4">
+                <a href="#dashboard" class="btn btn-ghost btn-sm md:btn-md">Back to Top</a>
+                <a href="https://instagram.com" target="_blank" class="btn btn-info btn-sm md:btn-md">Watch Reel</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="survival" class="mb-12 md:mb-16 scroll-mt-24">
+          <h2 class="text-xl sm:text-2xl md:text-3xl font-bold mb-6 break-words">🌶️ Survival Mechanics</h2>
+          <div class="card bg-base-100 shadow-xl border border-base-200">
+            <div class="card-body p-5 md:p-8">
+              <h2 class="card-title text-error break-words">Chaat Chaupati Radar</h2>
+              <p class="text-sm md:text-base text-base-content/80">Live tracking of the best Sev Puri and midnight Maggi near the hostels.</p>
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="badge badge-outline border-error text-error">Extra Teekha</span>
+                <span class="badge badge-outline border-error text-error">Pani Puri</span>
+                <span class="badge badge-outline border-error text-error">Midnight Fuel</span>
+              </div>
+              <div class="card-actions justify-end mt-4">
+                <a href="#dashboard" class="btn btn-ghost btn-sm md:btn-md">Back to Top</a>
+                <a href="https://zomato.com" target="_blank" class="btn btn-error text-white btn-sm md:btn-md">Find Food</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <footer class="footer footer-center p-8 bg-base-200 text-base-content mt-auto">
+        <aside>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-12 h-12 mb-2 fill-current">
+            <text y=".9em" font-size="90">💻</text>
+          </svg>
+          <p class="font-medium text-sm sm:text-base max-w-sm">
+            Made with ❤️, AI, Ctrl+C, Ctrl+V<br/>
+            and the drive of Modi by <br/>
+            <span class="font-bold text-primary">Ishan Sharma</span>, a fan of Modi, Rahul, Kejriwal, Madhuri Dixit, and Sonali Bendre. (IITB)
+          </p>
+        </aside>
+      </footer>
+
+    </div> 
+
+    <div class="drawer-side z-40 h-[100dvh]">
+      <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label> 
+      <ul class="menu p-4 w-72 h-full bg-base-200 text-base-content flex flex-col gap-2 border-r border-base-300 overflow-y-auto">
+        
+        <li class="mb-6 mt-2 hidden lg:block text-center">
+          <div class="text-2xl font-black text-primary cursor-default hover:bg-transparent">
+            IITB Tech Community
+          </div>
+        </li>
+        
+        <li class="menu-title mt-4 lg:mt-0"><span class="text-xs uppercase tracking-wider">Main</span></li>
+        <li><a href="#dashboard" class="py-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          Dashboard
+        </a></li>
+
+        <li class="menu-title mt-4"><span class="text-xs uppercase tracking-wider">Modules</span></li>
+        <li><a href="#cs-resources" class="py-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          CS Resources
+        </a></li>
+        <li><a href="#cminds" class="py-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+          CMINDS
+        </a></li>
+        <li><a href="#tech" class="py-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+          Tech & CP
+        </a></li>
+        <li><a href="#bollywood" class="py-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19.82 2c-.3.28-.52.57-.69.88-.31.57-.46 1.14-.46 1.7 0 .56.15 1.13.46 1.7.17.31.39.6.69.88l-1.39 1.39c-.3-.28-.52-.57-.69-.88-.31-.57-.46-1.14-.46-1.7 0-.56.15-1.13.46-1.7.17-.31.39-.6.69-.88L19.82 2zM15.82 6c-.3.28-.52.57-.69.88-.31.57-.46 1.14-.46 1.7 0 .56.15 1.13.46 1.7.17.31.39.6.69.88l-1.39 1.39c-.3-.28-.52-.57-.69-.88-.31-.57-.46-1.14-.46-1.7 0-.56.15-1.13.46-1.7.17-.31.39-.6.69-.88L15.82 6zM2 12c.28-.3.57-.52.88-.69.57-.31 1.14-.46 1.7-.46.56 0 1.13.15 1.7.46.31.17.6.39.88.69l1.39-1.39c-.28-.3-.57-.52-.88-.69-.57-.31-1.14-.46-1.7-.46-.56 0-1.13.15-1.7.46-.31.17-.6.39-.88.69L2 12zM6 16c.28-.3.57-.52.88-.69.57-.31 1.14-.46 1.7-.46.56 0 1.13.15 1.7.46.31.17.6.39.88.69l1.39-1.39c-.28-.3-.57-.52-.88-.69-.57-.31-1.14-.46-1.7-.46-.56 0-1.13.15-1.7.46-.31.17-.6.39-.88.69L6 16zM12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"/></svg>
+          Stress Relief
+        </a></li>
+        <li><a href="#survival" class="py-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          Survival Mechanics
+        </a></li>
+
+        <li class="menu-title mt-4"><span class="text-xs uppercase tracking-wider">Settings</span></li>
+        <li>
+          <button onclick="cycleTheme()" class="btn btn-ghost justify-start py-3 font-medium active:scale-95 transition-transform">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 2048 2048"><path d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"></path></svg>
+            <span id="theme-btn-text">Theme: Light</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    function sendFeedback() {
+      const email = "25b2270@iitb.ac.in";
+      const subject = encodeURIComponent("Feedback on IITB Tech Community");
+      const body = encodeURIComponent("Hey Ishan,\n\nI was looking at the Tech Community portal and wanted to share some feedback...\n\n");
+      
+      window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+    }
+
+    // Theme Cycler Logic
+    const themes = ["light", "dark", "retro", "cyberpunk", "valentine", "aqua"];
+    let currentThemeIndex = 0;
+
+    function cycleTheme() {
+      currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+      const newTheme = themes[currentThemeIndex];
+      
+      // Update HTML attribute
+      document.documentElement.setAttribute('data-theme', newTheme);
+      
+      // Update button text (Capitalize first letter)
+      const capitalizedTheme = newTheme.charAt(0).toUpperCase() + newTheme.slice(1);
+      document.getElementById('theme-btn-text').innerText = 'Theme: ' + capitalizedTheme;
+    }
+  </script>
+
+</body>
+</html>
